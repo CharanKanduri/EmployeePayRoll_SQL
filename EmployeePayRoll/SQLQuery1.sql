@@ -9,3 +9,11 @@ Create Table employee_payroll
 EmployeeName varchar(100),
 Salary float,
 StartDate Date)
+------- UC 3: Insert Values in Table -------
+Insert into employee_payroll(EmployeeName,Salary,StartDate) values 
+('Harsha Varghese',15000,'2021-03-12'),
+('Ashaya Sivakumar',1000,'2021-07-18'),
+('Rujula',250000,'2019-04-20'),
+('Gayatri KG',19000,'2007-02-22');
+------- UC 4: Retrieve all Data -------
+select * from employee_payroll;
