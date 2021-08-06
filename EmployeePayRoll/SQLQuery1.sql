@@ -59,5 +59,20 @@ where EmployeeName='Rujula';
 Update employee_payroll 
 set EmployeePhoneNumber='8715605050',Address='Bareilly,UP'
 where EmployeeName='Gayatri KG';
+------- UC 9: Rename Salary to Basic Pay and Add Deduction,Taxable pay, Income Pay , Netpay -------
+
+EXEC sp_rename 'employee_payroll.Deduction' , 'Deduce', 'COLUMN'
+Alter table employee_payroll
+add Deduce float,TaxablePay float, IncomeTax float,NetPay float;
+Update employee_payroll 
+set Deduction=1000
+where Gender='F';
+Update employee_payroll 
+set Deduction=2000
+where Gender='M';
+update employee_payroll
+set NetPay=(BasicPay - Deduction)
+update employee_payroll
+set NetPay=0,Deduction=0
 
 select * from employee_payroll;
